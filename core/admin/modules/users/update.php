@@ -1,4 +1,4 @@
-<?
+<?php
 	$id = intval($_POST["id"]);
 
 	$clean_referer = str_replace(array("http://","https://"),"//",$_SERVER["HTTP_REFERER"]);
@@ -11,7 +11,7 @@
 		<p>To update a user, please access the <a href="<?=ADMIN_ROOT?>users/edit/<?=$id?>/">Edit User</a> page.</p>
 	</section>
 </div>
-<?
+<?php
 	} else {
 		// Check security policy
 		if ($_POST["password"] && !$admin->validatePassword($_POST["password"])) {

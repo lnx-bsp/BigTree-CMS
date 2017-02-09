@@ -1,4 +1,4 @@
-<?
+<?php
 	$api = new BigTreeFacebookAPI(false);
 	$name = "Facebook";
 	$route = "facebook";

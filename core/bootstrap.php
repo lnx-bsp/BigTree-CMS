@@ -1,4 +1,4 @@
-<?
+<?php
 	ini_set("log_errors","false");
 	
 	if (!defined("BIGTREE_SITE_KEY")) {

@@ -1,4 +1,4 @@
-<?
+<?php
 	$admin->deleteModuleEmbedForm(end($bigtree["commands"]));
 
 	$admin->growl("Developer","Deleted Embeddable Form");

@@ -767,7 +767,7 @@
 				// Get existing ACL
 				$xml = $this->callAmazonS3("GET",$container,$pointer,array("acl" => ""));
 				// Remove XML opening tags
-				$xml = str_replace('<?xml version="1.0" encoding="UTF-8"?>
+				$xml = str_replace('<?phpxml version="1.0" encoding="UTF-8"?>
 ','',$xml);
 				// Add in our global read ACL
 				$xml = str_replace('</AccessControlList>','<Grant><Grantee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Group"><URI>http://acs.amazonaws.com/groups/global/AllUsers</URI></Grantee><Permission>READ</Permission></Grant></AccessControlList>',$xml);

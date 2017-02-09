@@ -1,4 +1,4 @@
-<?	
+<?php	
 	// Determine whether we should check external links
 	$external = $_GET["external"] ? true : false;
 	$id = $_GET["id"];
@@ -53,7 +53,7 @@
 		<p>Broken <?=(($type == "img") ? "Image" : "Link")?>: <?=$error?> on page &ldquo;<?=$page["nav_title"]?>&rdquo; in field &ldquo;<?=$title?>&rdquo;</p>
 	</section>
 </li>
-<?
+<?php
 			}
 		}
 	}

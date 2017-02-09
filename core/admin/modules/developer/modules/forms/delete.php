@@ -1,4 +1,4 @@
-<?
+<?php
 	$admin->deleteModuleForm(end($bigtree["commands"]));
 
 	$admin->growl("Developer","Deleted Form");

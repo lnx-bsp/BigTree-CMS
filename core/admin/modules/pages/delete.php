@@ -1,4 +1,4 @@
-<?
+<?php
 	$page = end($bigtree["path"]);
 	
 	$page_data = $cms->getPendingPage($page);

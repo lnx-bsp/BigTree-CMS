@@ -1,4 +1,4 @@
-<?
+<?php
 	$clean_referer = str_replace(array("http://","https://"),"//",$_SERVER["HTTP_REFERER"]);
 	$clean_admin_root = str_replace(array("http://","https://"),"//",ADMIN_ROOT)."users/add/";
 
@@ -9,7 +9,7 @@
 		<p>To create a user, please access the <a href="<?=ADMIN_ROOT?>users/add/">Add User</a> page.</p>
 	</section>
 </div>
-<?
+<?php
 	} else {
 		// Check security policy
 		if (!$admin->validatePassword($_POST["password"])) {

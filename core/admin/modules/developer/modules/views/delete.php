@@ -1,4 +1,4 @@
-<?
+<?php
 	$admin->deleteModuleView(end($bigtree["commands"]));
 		
 	$admin->growl("Developer","Deleted View");

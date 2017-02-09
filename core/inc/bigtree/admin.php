@@ -622,7 +622,7 @@
 			}
 
 			// If we're creating a new file, let's populate it with some convenience things to show what resources are available.
-			$file_contents = '<?
+			$file_contents = '<?php
 	/*
 		Resources Available:
 ';
@@ -781,7 +781,7 @@
 
 			// Make the files for draw and process and options if they don't exist.
 			if (!file_exists(SERVER_ROOT."custom/admin/form-field-types/draw/$file")) {
-				BigTree::putFile(SERVER_ROOT."custom/admin/form-field-types/draw/$file",'<?
+				BigTree::putFile(SERVER_ROOT."custom/admin/form-field-types/draw/$file",'<?php
 	/*
 		When drawing a field type you are provided with the $field array with the following keys:
 			"title" — The title given by the developer to draw as the label (drawn automatically)
@@ -799,7 +799,7 @@
 				BigTree::setPermissions(SERVER_ROOT."custom/admin/form-field-types/draw/$file");
 			}
 			if (!file_exists(SERVER_ROOT."custom/admin/form-field-types/process/$file")) {
-				BigTree::putFile(SERVER_ROOT."custom/admin/form-field-types/process/$file",'<?
+				BigTree::putFile(SERVER_ROOT."custom/admin/form-field-types/process/$file",'<?php
 	/*
 		When processing a field type you are provided with the $field array with the following keys:
 			"key" — The key of the field (this could be the database column for a module or the ID of the template or callout resource)
@@ -932,7 +932,7 @@
 			if ($class) {
 				// Create class module.
 				$f = fopen(SERVER_ROOT."custom/inc/modules/$route.php","w");
-				fwrite($f,"<?\n");
+				fwrite($f,"<?php\n");
 				fwrite($f,"	class $class extends BigTreeModule {\n");
 				fwrite($f,'		var $Table = "'.$table.'";'."\n");
 				fwrite($f,"	}\n");
@@ -1609,7 +1609,7 @@
 			}
 
 			// If we're creating a new file, let's populate it with some convenience things to show what resources are available.
-			$file_contents = "<?\n	/*\n		Resources Available:\n";
+			$file_contents = "<?php\n	/*\n		Resources Available:\n";
 
 			$types = $this->getCachedFieldTypes();
 			$types = $types["templates"];
@@ -2337,7 +2337,7 @@
 				} else {
 ?>
 <input type="hidden" name="<?=$field["key"]?>[<?=implode("][",$keys)?>][<?=$key?>]" value="<?=BigTree::safeEncode($value)?>" />
-<?
+<?php
 				}
 			}
 		}
@@ -2396,13 +2396,13 @@
 					include $field_type_path;
 				} else {
 ?>
-<fieldset<? if ($field["matrix_title_field"]) { ?> class="matrix_title_field"<? } ?>>
-	<? if ($field["title"] && $field["type"] != "checkbox") { ?>
-	<label<?=$label_validation_class?>><?=$field["title"]?><? if ($field["subtitle"]) { ?> <small><?=$field["subtitle"]?></small><? } ?></label>
-	<? } ?>
-	<? include $field_type_path ?>
+<fieldset<?php if ($field["matrix_title_field"]) { ?> class="matrix_title_field"<?php } ?>>
+	<?php if ($field["title"] && $field["type"] != "checkbox") { ?>
+	<label<?=$label_validation_class?>><?=$field["title"]?><?php if ($field["subtitle"]) { ?> <small><?=$field["subtitle"]?></small><?php } ?></label>
+	<?php } ?>
+	<?php include $field_type_path ?>
 </fieldset>
-<?
+<?php
 					$bigtree["tabindex"]++;
 				}
 

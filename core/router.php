@@ -1,4 +1,4 @@
-<?
+<?php
 	// Handle Javascript Minifying and Caching
 	if ($bigtree["path"][0] == "js") {
 		clearstatcache();
@@ -297,7 +297,7 @@
 		$feed = $cms->getFeedByRoute($route);
 		if ($feed) {
 			header("Content-type: text/xml");
-			echo '<?xml version="1.0" encoding="UTF-8" ?>';
+			echo '<?phpxml version="1.0" encoding="UTF-8" ?>';
 			include BigTree::path("feeds/".$feed["type"].".php");
 			die();
 		}
